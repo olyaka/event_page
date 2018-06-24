@@ -1,6 +1,7 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 import "@polymer/polymer/lib/elements/dom-if.js";
 import "@polymer/paper-button/paper-button.js";
+import "@polymer/paper-input/paper-input.js";
 import "@polymer/app-layout/app-header-layout/app-header-layout.js";
 import "@polymer/app-layout/app-scroll-effects/app-scroll-effects.js";
 import "@polymer/app-layout/app-header/app-header.js";
@@ -88,16 +89,6 @@ class EventPage extends PolymerElement {
           line-height: 1.5;
         }
 
-        iron-form input {
-          width: 100%;
-          padding: 12px 20px;
-          margin: 8px 0;
-          display: inline-block;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          box-sizing: border-box;
-        }
-
         iron-form paper-button {
           width: 20%;
         }
@@ -146,9 +137,9 @@ class EventPage extends PolymerElement {
             <h3>Register</h3>
             <iron-form>
               <form method="get" action="https://httpbin.org/get">
-                <input type="text" name="name" placeholder="Your Name">
-                <input type="e-mail" name="e-mail" placeholder="E-mail">
-                <input type="password" name="password" placeholder="Password">
+                <paper-input type="text" required name="name" placeholder="Your Name"></paper-input>
+                <paper-input type="e-mail" required name="e-mail" placeholder="E-mail"></paper-input>
+                <paper-input type="password" required name="password" placeholder="Password"></paper-input>
                 
                 <button type="submit"><paper-button raised class="green">Register</paper-button></button>
               </form>
