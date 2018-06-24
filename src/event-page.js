@@ -136,10 +136,10 @@ class EventPage extends PolymerElement {
           <div>
             <h3>Register</h3>
             <iron-form>
-              <form method="get" action="https://httpbin.org/get">
-                <paper-input type="text" required name="name" placeholder="Your Name"></paper-input>
-                <paper-input type="e-mail" required name="e-mail" placeholder="E-mail"></paper-input>
-                <paper-input type="password" required name="password" placeholder="Password"></paper-input>
+              <form method="post" action="https://httpbin.org/post" enctype="multipart/form-data">
+                <paper-input type="text" required name="name" placeholder="Your Name" title="Your Name"></paper-input>
+                <paper-input type="e-mail" required auto-validate pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" error-message="Wrong e-mail" name="e-mail" placeholder="E-mail"></paper-input>
+                <paper-input type="password" required auto-validate pattern=".{6,}" error-message="Must be more than 6 symbols" name="password" placeholder="Password"></paper-input>
                 
                 <button type="submit"><paper-button raised class="green">Register</paper-button></button>
               </form>
